@@ -1,0 +1,16 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "build": {
+      "env": {
+        "DATABASE_URL": "postgresql://postgres.vbumlmnpxkkyxhidxnzp:RyeS_0994351549@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+      },
+      "commands": [
+        "npx prisma migrate deploy"
+      ]
+    }
+  }
