@@ -4,7 +4,7 @@ import { blogCard } from "@/utils/types";
 
 const Bloglist = ({ Blogs }: { Blogs: blogCard[] }) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 mt-10">
       {Blogs.map((item, index) => {
         return <Blogcard key={index} item={item} />;
       })}

@@ -1,20 +1,14 @@
-'use client';
+import Homecontainer from "@/components/home/Homecontainer";
+import { Suspense } from "react";
 
-import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Homecontainer from '@/components/home/Homecontainer';
-
-const Page = () => {
-  const searchParams = useSearchParams();
-  const category = searchParams.get('category') || '';
-
+const page = async () => {
   return (
-    <Suspense fallback={<div>กำลังโหลด...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
       <main>
-        <Homecontainer category={category} />
+        <Homecontainer/>
       </main>
     </Suspense>
   );
 };
 
-export default Page;
+export default page;
