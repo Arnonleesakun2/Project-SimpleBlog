@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { blogCard } from "@/utils/types";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Blogcard = ({ item }: { item: blogCard }) => {
   return (
@@ -28,7 +29,9 @@ const Blogcard = ({ item }: { item: blogCard }) => {
           </div>
         </CardHeader>
         <CardContent>
-          <img
+          <Image
+           width={500}  
+           height={300} 
             className="object-cover w-full rounded-2xl"
             src={item.image}
             alt={item.title}

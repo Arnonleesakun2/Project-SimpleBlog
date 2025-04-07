@@ -63,7 +63,7 @@ export const deleteBlog = async (id: string) => {
   }
 };
 
-export const fetchCatBlog = async ({ category }: { category?: string }) => {
+export const fetchCatBlog = async ({ category ="" }: { category?: string }) => {
   const blogs = await prisma.blog.findMany({
     where: {
       OR: [

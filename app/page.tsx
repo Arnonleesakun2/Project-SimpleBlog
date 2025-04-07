@@ -1,16 +1,20 @@
-import Homecontainer from "@/components/home/Homecontainer";
+'use client';
 
-const page = async ({
-  searchParams,
-}: {
-  searchParams: { category?: string };
-}) => {
-  const { category } = await searchParams;
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Homecontainer from '@/components/home/Homecontainer';
+
+const Page = () => {
+  const searchParams = useSearchParams();
+  const category = searchParams.get('category') || '';
+
   return (
-    <main>
-      <Homecontainer category={category} />
-    </main>
+    <Suspense fallback={<div>กำลังโหลด...</div>}>
+      <main>
+        <Homecontainer category={category} />
+      </main>
+    </Suspense>
   );
 };
 
-export default page;
+export default Page;

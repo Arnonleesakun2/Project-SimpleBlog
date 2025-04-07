@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "@/styles/swiperFix.css";
 import Otherinfo from "./Otherinfo";
+import Image from "next/image";
 
 const Hero = ({ Blogs }: { Blogs: blogCard[] }) => {
   return (
@@ -25,22 +26,22 @@ const Hero = ({ Blogs }: { Blogs: blogCard[] }) => {
       >
         {Blogs.map((item, index) => {
           return (
-            <div className="">
-              <SwiperSlide key={index} className="group">
-                <div className=" relative rounded-2xl overflow-hidden">
-                  <img
-                    className="w-full h-[400px] object-cover brightness-75 transition-all duration-500 group-hover:brightness-50 "
-                    src={item.image}
-                    alt=""
-                  />
+            <SwiperSlide key={index} className="group">
+              <div className=" relative rounded-2xl overflow-hidden">
+                <Image
+                 width={500}  
+                 height={300} 
+                  className="w-full h-[400px] object-cover brightness-75 transition-all duration-500 group-hover:brightness-50 "
+                  src={item.image}
+                  alt={item.title}
+                />
+              </div>
+              <div className=" absolute bottom-5 left-0 z-50">
+                <div className=" col-span-4 mb-4 flex h-full flex-1 justify-end px-5">
+                  <Otherinfo item={item} />
                 </div>
-                <div className=" absolute bottom-5 left-0 z-50">
-                  <div className=" col-span-4 mb-4 flex h-full flex-1 justify-end px-5">
-                    <Otherinfo item={item} />
-                  </div>
-                </div>
-              </SwiperSlide>
-            </div>
+              </div>
+            </SwiperSlide>
           );
         })}
       </Swiper>

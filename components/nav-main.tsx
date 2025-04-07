@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, BookUser, House, type LucideIcon } from "lucide-react";
+import { ChevronRight, BookUser, House, } from "lucide-react";
 
 import {
   Collapsible,

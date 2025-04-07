@@ -8,6 +8,7 @@ import {
 import { blogCard } from "@/utils/types";
 import { Button } from "../ui/button";
 import Myblogdelete from "./Myblogdelete";
+import Image from "next/image";
 
 const Myblogcard = ({ item, onDeleteSuccess }: { item: blogCard, onDeleteSuccess: () => void }) => {
   return (
@@ -30,7 +31,9 @@ const Myblogcard = ({ item, onDeleteSuccess }: { item: blogCard, onDeleteSuccess
           </div>
         </CardHeader>
         <CardContent>
-          <img
+          <Image
+           width={500}  
+           height={300} 
             className="object-cover w-full rounded-2xl"
             src={item.image}
             alt={item.title}
